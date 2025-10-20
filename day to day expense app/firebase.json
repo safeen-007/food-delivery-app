@@ -1,0 +1,39 @@
+{
+  "hosting": {
+    "public": "expense_tracker/day to day expense app/static",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [{
+      "source": "**",
+      "run": {
+        "serviceId": "day-to-day-expense-app",
+        "region": "us-central1"
+      }
+    }]
+  },
+  "run": {
+    "serviceId": "day-to-day-expense-app",
+    "source": ".",
+    "cpu": 1,
+    "memory": "1Gi",
+    "maxInstances": 10,
+    "minInstances": 0,
+    "concurrency": 80,
+    "timeout": "300s",
+    "vpcAccess": {
+      "connector": null,
+      "egress": "all-traffic"
+    },
+    "ingress": "all",
+    "environmentVariables": {
+      "FLASK_APP": "expense_tracker/day to day expense app/app.py",
+      "FLASK_ENV": "production",
+      "SECRET_KEY": "your-secret-key-here",
+      "SQLALCHEMY_DATABASE_URI": "sqlite:///expenses.db",
+      "GOOGLE_API_KEY": "AIzaSyDZkS-hLThgslRm9DTTLnJ5zK1H9IWXghY"
+    }
+  }
+}
