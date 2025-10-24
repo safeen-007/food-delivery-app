@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+.header {
+  background-color: #cb202d;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+}
